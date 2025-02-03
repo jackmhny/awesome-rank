@@ -1,0 +1,104 @@
+# Awesome Rank Chrome Extension Development Rules
+
+## Project Scope
+- Chrome extension for ranking GitHub awesome lists
+- Built with React, TypeScript, Vite, and Tailwind CSS
+- Uses Chrome Extension Manifest V3
+- Follows the boilerplate structure from chrome-extension-boilerplate-react-vite
+
+## Development Workflow
+
+### 1. Environment Setup
+- Use pnpm as the package manager
+- Node.js version: See .nvmrc file
+- Follow monorepo structure with packages in /packages and pages in /pages
+
+### 2. Development Process
+1. Always work from project-plan.md roadmap
+2. Implement features step by step:
+   - Console functionality first
+   - UI components second
+   - Integration with GitHub API third
+   - Enhanced features last
+
+### 3. Git Workflow
+- Main branch: main
+- Create feature branches for new features
+- Commit messages should be clear and descriptive
+- Push changes after each major feature completion
+
+### 4. Building and Testing
+- Build command: `pnpm build`
+- Test command: `pnpm test`
+- Load unpacked extension from /dist directory
+- Manual testing required for Chrome extension features
+
+### 5. Code Organization
+- /pages: Extension pages (popup, options, etc.)
+- /packages: Shared utilities and components
+- /chrome-extension: Core extension files
+- /tests: E2E and unit tests
+
+### 6. Best Practices
+- Use TypeScript for type safety
+- Follow React best practices and hooks
+- Implement proper error handling
+- Keep UI components modular and reusable
+- Use Tailwind CSS for styling
+- Maintain dark/light theme support
+
+### 7. API Integration
+- GitHub API for repository data
+- Handle rate limiting appropriately
+- Cache responses when possible
+- Use proper error handling for API calls
+
+### 8. Extension Structure
+- Popup: Main interface for list ranking
+- Content Script: Page modifications
+- Background: Event handling and API calls
+- Options: User preferences
+
+### 9. Build Process
+1. Clean previous build: `pnpm clean:bundle`
+2. Prepare dependencies: `turbo ready`
+3. Build all components: `turbo build`
+4. Output directory: /dist
+
+### 10. Testing Guidelines
+- Write unit tests for utilities
+- E2E tests for critical paths
+- Manual testing for Chrome API integration
+- Test both light and dark themes
+
+### 11. Package Management
+- Use pnpm for consistency
+- Keep dependencies updated
+- Use workspace features for monorepo
+- Check for security vulnerabilities
+
+### 12. Documentation
+- Keep README.md updated
+- Document API integrations
+- Maintain clear code comments
+- Update project-plan.md progress
+
+### 13. Performance Considerations
+- Optimize bundle sizes
+- Minimize API calls
+- Use proper caching strategies
+- Efficient DOM manipulation
+
+### 14. Security
+- Secure storage of user data
+- Safe API key handling
+- XSS prevention
+- CSP compliance
+
+### 15. Error Handling
+- Graceful error recovery
+- User-friendly error messages
+- Proper logging
+- Debug mode toggle
+
+Remember: Always check project-plan.md for the next steps and maintain the existing code structure and patterns. 
